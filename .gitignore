@@ -1,0 +1,43 @@
+.classpath
+.factorypath
+*.project
+*.settings
+
+# Mac
+*.DS_Store
+
+# Intellij Idea files
+.idea
+*.iml
+
+# VS Code
+.vscode
+
+# gradle
+.gradle
+**/build/
+!src/**/build/
+
+# Java files
+*pom.xml.versionsBackup
+**/target
+
+# NodeJS files
+node_modules
+
+# Testing files
+.coverage
+
+# Generated code
+
+# npm pack
+*.tgz
+
+# backup files from some editors
+*~
+
+# nx cache
+.nx
+
+# vite cache
+.vite
