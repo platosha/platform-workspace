@@ -41,3 +41,6 @@ node_modules
 
 # vite cache
 .vite
+
+# Ignore Gradle build output directory
+build
