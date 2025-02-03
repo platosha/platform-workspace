@@ -6,3 +6,5 @@
  */
 
 rootProject.name = "platform-workspace"
+
+include(":maven:flow", ":maven:hilla")
