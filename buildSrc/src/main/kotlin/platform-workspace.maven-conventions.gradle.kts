@@ -16,7 +16,7 @@ repositories {
     maven { url = uri("https://repo.spring.io/milestone") }
 }
 
-val mavenProjectDir = file("${project.rootDir}/subtrees/${project.name}")
+val mavenProjectDir = file("${project.rootDir}/submodules/${project.name}")
 val mavenWrapperDir = file("${project.rootDir}/maven")
 
 tasks.withType(MavenExec::class.java).configureEach {

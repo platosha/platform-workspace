@@ -7,4 +7,4 @@
 
 rootProject.name = "platform-workspace"
 
-include(":maven:flow", ":maven:hilla")
+include(":maven:flow", ":maven:hilla", ":npm:hilla")
