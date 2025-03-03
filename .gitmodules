@@ -1,0 +1,6 @@
+[submodule "submodules/flow"]
+	path = submodules/flow
+	url = git@github.com:vaadin/flow.git
+[submodule "submodules/hilla"]
+	path = submodules/hilla
+	url = git@github.com:vaadin/hilla.git
