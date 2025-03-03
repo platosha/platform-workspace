@@ -29,7 +29,15 @@ tasks.withType(NpmTask::class) {
 }
 
 tasks.register<NpmTask>("npmClean") {
-    npmCommand.set(listOf("run", "clean"))
+    npmCommand.set(listOf("run", "clean:build"))
+}
+
+tasks.register<NpmTask>("npmBuild") {
+    npmCommand.set(listOf("run", "build"))
+}
+
+tasks.register<NpmTask>("npmTest") {
+    npmCommand.set(listOf("test"))
 }
 
 tasks.named(LifecycleBasePlugin.CLEAN_TASK_NAME).configure {
@@ -38,4 +46,8 @@ tasks.named(LifecycleBasePlugin.CLEAN_TASK_NAME).configure {
 
 tasks.named(LifecycleBasePlugin.ASSEMBLE_TASK_NAME).configure {
     dependsOn("npmInstall")
+}
+
+tasks.named(LifecycleBasePlugin.CHECK_TASK_NAME).configure {
+    dependsOn("npmTest")
 }

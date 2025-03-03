@@ -29,8 +29,12 @@ tasks.register<MavenExec>("mavenClean") {
 }
 
 tasks.register<MavenExec>("mavenInstall") {
-    define = mapOf("skipTests" to "true")
+    define(mapOf("skipTests" to "true"))
     goals("install")
+}
+
+tasks.register<MavenExec>("mavenVerify") {
+    goals("verify")
 }
 
 tasks.named(LifecycleBasePlugin.CLEAN_TASK_NAME).configure {
@@ -39,4 +43,8 @@ tasks.named(LifecycleBasePlugin.CLEAN_TASK_NAME).configure {
 
 tasks.named(LifecycleBasePlugin.ASSEMBLE_TASK_NAME).configure {
     dependsOn("mavenInstall")
+}
+
+tasks.named(LifecycleBasePlugin.CHECK_TASK_NAME).configure {
+    dependsOn("mavenVerify")
 }
