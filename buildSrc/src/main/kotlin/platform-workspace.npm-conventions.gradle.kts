@@ -33,10 +33,12 @@ tasks.register<NpmTask>("npmClean") {
 }
 
 tasks.register<NpmTask>("npmBuild") {
+    dependsOn("npmInstall")
     npmCommand.set(listOf("run", "build"))
 }
 
 tasks.register<NpmTask>("npmTest") {
+    dependsOn("npmInstall")
     npmCommand.set(listOf("test"))
 }
 
@@ -45,7 +47,7 @@ tasks.named(LifecycleBasePlugin.CLEAN_TASK_NAME).configure {
 }
 
 tasks.named(LifecycleBasePlugin.ASSEMBLE_TASK_NAME).configure {
-    dependsOn("npmInstall")
+    dependsOn("npmBuild")
 }
 
 tasks.named(LifecycleBasePlugin.CHECK_TASK_NAME).configure {
